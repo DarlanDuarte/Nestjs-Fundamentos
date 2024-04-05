@@ -15,7 +15,7 @@ export class AuthService{
     ){}
 
 
-    async createToken(user: User){
+    createToken(user: User){
 
         return {
             acessToken: this.jwtService.sign({
@@ -33,9 +33,9 @@ export class AuthService{
 
     }
 
-    async checkToken(token: string){
+    checkToken(token: string){
         try{
-            const data = await this.jwtService.verify(token)
+            const data = this.jwtService.verify(token)
 
             return data
 

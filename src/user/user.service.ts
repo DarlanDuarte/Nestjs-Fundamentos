@@ -30,7 +30,7 @@ export class UserService {
         })
     }
 
-    async update(id: number, {name, email, password, birthAt}: UpdatePutUserDTO){
+    async update(id: number, {name, email, password, birthAt, role}: UpdatePutUserDTO){
 
         await this.exists(id)
 
@@ -42,7 +42,9 @@ export class UserService {
                 name: name,
                 email: email,
                 password: password,
-                birthAt: birthAt ? new Date(birthAt) : null
+                birthAt: birthAt ? new Date(birthAt) : null,
+                role: role
+                
             }
         })
     }
