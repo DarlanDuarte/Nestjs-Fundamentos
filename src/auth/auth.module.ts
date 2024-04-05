@@ -10,7 +10,7 @@ import { UserService } from "src/user/user.service";
 @Module({
     imports: [
         JwtModule.register({
-        secret: `_rOF05FmD+Ej@s9fP1tc$~FGYs0{mBYB`
+        secret: process.env.JWT_SECRET
     }),
         forwardRef(() => UserModule) ,
         PrismaModule
